@@ -1,0 +1,6 @@
+platform:ios,'7.0'
+target 'MBProgressHUD' do
+pod 'AFNetworking'
+pod 'MBProgressHUD'
+pod 'Reachability'
+end

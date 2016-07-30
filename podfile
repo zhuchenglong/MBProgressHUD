@@ -3,4 +3,6 @@ target 'MBProgressHUD' do
 pod 'AFNetworking'
 pod 'MBProgressHUD'
 pod 'Reachability'
+pod 'Masonry'
+pod 'MJRefresh'
 end

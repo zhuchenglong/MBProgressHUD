@@ -9,7 +9,10 @@
 #import "ViewController.h"
 #import "RequestManager.h"
 #import "MBProgressHUD+HUD.h"
-
+//Gif刷新
+#import "UIViewController+GifLoding.h"
+#import "RefreshGifHeader.h"
+#import "RefreshGifFooter.h"
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define kWidth  [UIScreen mainScreen].bounds.size.width
 
@@ -23,11 +26,28 @@
 -(UITableView *)tableView{
     
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
+        
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight-64)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = 50;
         _tableView.tableHeaderView = [self headView];
+        //刷新
+        self.tableView.mj_header = [RefreshGifHeader headerWithRefreshingBlock:^{
+
+            //模拟刷新，定时5秒钟后停止刷新
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [self.tableView.mj_header endRefreshing];
+            });
+        }];
+        
+        self.tableView.mj_footer = [RefreshGifFooter footerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                [self.tableView.mj_footer endRefreshing];
+            });
+        }];
     }
     return _tableView;
 }
@@ -39,15 +59,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     [self.view addSubview:self.tableView];
 
+    [self.tableView.mj_header beginRefreshing];
+
+    
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 6;
+    return 7;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -57,7 +80,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    NSArray *array = @[@"只显示菊花",@"显示菊花+文字描述",@"显示文字描述-->2秒钟后消失",@"环形进度条+文字描述",@"条状进度条+文字描述",@"自定义图片+文字描述"];
+    NSArray *array = @[@"只显示菊花",@"显示菊花+文字描述",@"显示文字描述-->2秒钟后消失",@"环形进度条+文字描述",@"条状进度条+文字描述",@"自定义图片+文字描述",@"自定义动画加载(非MBProgressHUD)"];
     cell.textLabel.text = array[indexPath.row];
     
     return cell;
@@ -171,6 +194,27 @@
     if (indexPath.row == 5) {
         
         [MBProgressHUD showCustomViewHUD:@"下载失败！" imageName:@"failed"];
+    }
+    
+    if (indexPath.row == 6) {
+        
+        
+        [self showGifLoding:nil inView:[UIApplication sharedApplication].keyWindow];
+        [RequestManager downLoadWithUrl:url progress:^(double progress) {
+            
+            NSLog(@"下载进度--->%f",progress);
+            
+        } success:^(id responseObject) {
+            
+            [self hideGufLoding];//隐藏
+            
+            _imageView.image = [UIImage imageWithData:responseObject];
+            
+            
+        } fail:^(NSError *error) {
+            [MBProgressHUD showHUDMsg:@"下载失败！"];
+        }];
+
     }
 }
 - (void)didReceiveMemoryWarning {

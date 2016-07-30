@@ -143,9 +143,10 @@
          */
         [formData appendPartWithFileURL:fileURL name:@"icon" fileName:fileName mimeType:@"image/png" error:nil];
         
+        
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
-            progress(uploadProgress.fractionCompleted);
+            progress(uploadProgress.fractionCompleted);//完成的百分比
         }
         NSLog(@"上传进度：%@",uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -185,7 +186,7 @@
         
         //下载进度
         if (progress) {
-            progress(downloadProgress.fractionCompleted);
+            progress(downloadProgress.fractionCompleted);//完成的百分比
         }
         
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {

@@ -16,7 +16,11 @@
 		5ED2785D1D41284100DB9038 /* MBProgressHUDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2785C1D41284100DB9038 /* MBProgressHUDTests.m */; };
 		5ED278681D41284100DB9038 /* MBProgressHUDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED278671D41284100DB9038 /* MBProgressHUDUITests.m */; };
 		5ED278771D41286E00DB9038 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED278761D41286E00DB9038 /* RequestManager.m */; };
-		5ED278DA1D43C09E00DB9038 /* MBProgressHUD+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED278D91D43C09D00DB9038 /* MBProgressHUD+HUD.m */; };
+		5EF1F2251D4D11D300D25355 /* MBProgressHUD+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1F2241D4D11D300D25355 /* MBProgressHUD+HUD.m */; };
+		5EF1F22C1D4D13EC00D25355 /* UIViewController+GifLoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1F22B1D4D13EC00D25355 /* UIViewController+GifLoding.m */; };
+		5EF1F22F1D4D141600D25355 /* UIImageView+GifImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1F22E1D4D141600D25355 /* UIImageView+GifImage.m */; };
+		5EF1F2321D4D2B2300D25355 /* RefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1F2311D4D2B2300D25355 /* RefreshGifHeader.m */; };
+		5EF1F2351D4D2E6E00D25355 /* RefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1F2341D4D2E6E00D25355 /* RefreshGifFooter.m */; };
 		A8250438723554F02CBBF82D /* libPods-MBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 600C7183775AAE4BBC7366F4 /* libPods-MBProgressHUD.a */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +60,16 @@
 		5ED278691D41284100DB9038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ED278751D41286E00DB9038 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		5ED278761D41286E00DB9038 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
-		5ED278D81D43C09D00DB9038 /* MBProgressHUD+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HUD.h"; sourceTree = "<group>"; };
-		5ED278D91D43C09D00DB9038 /* MBProgressHUD+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HUD.m"; sourceTree = "<group>"; };
+		5EF1F2231D4D11D300D25355 /* MBProgressHUD+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HUD.h"; sourceTree = "<group>"; };
+		5EF1F2241D4D11D300D25355 /* MBProgressHUD+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HUD.m"; sourceTree = "<group>"; };
+		5EF1F22A1D4D13EC00D25355 /* UIViewController+GifLoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GifLoding.h"; sourceTree = "<group>"; };
+		5EF1F22B1D4D13EC00D25355 /* UIViewController+GifLoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GifLoding.m"; sourceTree = "<group>"; };
+		5EF1F22D1D4D141600D25355 /* UIImageView+GifImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GifImage.h"; sourceTree = "<group>"; };
+		5EF1F22E1D4D141600D25355 /* UIImageView+GifImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GifImage.m"; sourceTree = "<group>"; };
+		5EF1F2301D4D2B2300D25355 /* RefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshGifHeader.h; sourceTree = "<group>"; };
+		5EF1F2311D4D2B2300D25355 /* RefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshGifHeader.m; sourceTree = "<group>"; };
+		5EF1F2331D4D2E6E00D25355 /* RefreshGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshGifFooter.h; sourceTree = "<group>"; };
+		5EF1F2341D4D2E6E00D25355 /* RefreshGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshGifFooter.m; sourceTree = "<group>"; };
 		600C7183775AAE4BBC7366F4 /* libPods-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		911B003AA207161B4B72525D /* Pods-MBProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBProgressHUD.release.xcconfig"; path = "Pods/Target Support Files/Pods-MBProgressHUD/Pods-MBProgressHUD.release.xcconfig"; sourceTree = "<group>"; };
 		A3D834BF86168E0CFB5DBC13 /* Pods-MBProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBProgressHUD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBProgressHUD/Pods-MBProgressHUD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,8 +140,11 @@
 				5ED278491D41284100DB9038 /* ViewController.m */,
 				5ED278751D41286E00DB9038 /* RequestManager.h */,
 				5ED278761D41286E00DB9038 /* RequestManager.m */,
-				5ED278D81D43C09D00DB9038 /* MBProgressHUD+HUD.h */,
-				5ED278D91D43C09D00DB9038 /* MBProgressHUD+HUD.m */,
+				5EF1F2301D4D2B2300D25355 /* RefreshGifHeader.h */,
+				5EF1F2311D4D2B2300D25355 /* RefreshGifHeader.m */,
+				5EF1F2331D4D2E6E00D25355 /* RefreshGifFooter.h */,
+				5EF1F2341D4D2E6E00D25355 /* RefreshGifFooter.m */,
+				5EF1F2221D4D11C800D25355 /* Category */,
 				5ED2784B1D41284100DB9038 /* Main.storyboard */,
 				5ED2784E1D41284100DB9038 /* Assets.xcassets */,
 				5ED278501D41284100DB9038 /* LaunchScreen.storyboard */,
@@ -163,6 +178,27 @@
 				5ED278691D41284100DB9038 /* Info.plist */,
 			);
 			path = MBProgressHUDUITests;
+			sourceTree = "<group>";
+		};
+		5EF1F2221D4D11C800D25355 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5EF1F2231D4D11D300D25355 /* MBProgressHUD+HUD.h */,
+				5EF1F2241D4D11D300D25355 /* MBProgressHUD+HUD.m */,
+				5EF1F2291D4D13E100D25355 /* GifLoding */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5EF1F2291D4D13E100D25355 /* GifLoding */ = {
+			isa = PBXGroup;
+			children = (
+				5EF1F22A1D4D13EC00D25355 /* UIViewController+GifLoding.h */,
+				5EF1F22B1D4D13EC00D25355 /* UIViewController+GifLoding.m */,
+				5EF1F22D1D4D141600D25355 /* UIImageView+GifImage.h */,
+				5EF1F22E1D4D141600D25355 /* UIImageView+GifImage.m */,
+			);
+			path = GifLoding;
 			sourceTree = "<group>";
 		};
 		7EB310B24A049DBAE9784F80 /* Pods */ = {
@@ -358,9 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EF1F22F1D4D141600D25355 /* UIImageView+GifImage.m in Sources */,
 				5ED2784A1D41284100DB9038 /* ViewController.m in Sources */,
-				5ED278DA1D43C09E00DB9038 /* MBProgressHUD+HUD.m in Sources */,
+				5EF1F22C1D4D13EC00D25355 /* UIViewController+GifLoding.m in Sources */,
+				5EF1F2321D4D2B2300D25355 /* RefreshGifHeader.m in Sources */,
+				5EF1F2251D4D11D300D25355 /* MBProgressHUD+HUD.m in Sources */,
 				5ED278471D41284100DB9038 /* AppDelegate.m in Sources */,
+				5EF1F2351D4D2E6E00D25355 /* RefreshGifFooter.m in Sources */,
 				5ED278441D41284100DB9038 /* main.m in Sources */,
 				5ED278771D41286E00DB9038 /* RequestManager.m in Sources */,
 			);

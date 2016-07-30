@@ -41,7 +41,7 @@
                 [self.tableView.mj_header endRefreshing];
             });
         }];
-        
+        //加载更多
         self.tableView.mj_footer = [RefreshGifFooter footerWithRefreshingBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 

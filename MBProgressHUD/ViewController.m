@@ -70,7 +70,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 7;
+    return 8;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -80,7 +80,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    NSArray *array = @[@"只显示菊花",@"显示菊花+文字描述",@"显示文字描述-->2秒钟后消失",@"环形进度条+文字描述",@"条状进度条+文字描述",@"自定义图片+文字描述",@"自定义动画加载(非MBProgressHUD)"];
+    NSArray *array = @[@"只显示菊花",@"显示菊花+文字描述",@"显示文字描述-->2秒钟后消失",@"环形进度条+文字描述",@"条状进度条+文字描述",@"自定义图片+文字描述",@"自定义动画加载(非MBProgressHUD)",@"自定义加载动画CustomView"];
     cell.textLabel.text = array[indexPath.row];
     
     return cell;
@@ -214,8 +214,31 @@
         } fail:^(NSError *error) {
             [MBProgressHUD showHUDMsg:@"下载失败！"];
         }];
-
     }
+    
+    
+    if (indexPath.row == 7) {
+        
+        [MBProgressHUD showCustomGifHUD:@"加载中..." imageName:@"reflesh3_60x55"];
+        
+        [RequestManager downLoadWithUrl:url progress:^(double progress) {
+            
+            NSLog(@"下载进度--->%f",progress);
+            
+        } success:^(id responseObject) {
+            
+            [MBProgressHUD showCustomViewHUD:@"下载成功！" imageName:@"succeed"];
+            
+            _imageView.image = [UIImage imageWithData:responseObject];
+            
+            
+        } fail:^(NSError *error) {
+            [MBProgressHUD showHUDMsg:@"下载失败！"];
+        }];
+    }
+    
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

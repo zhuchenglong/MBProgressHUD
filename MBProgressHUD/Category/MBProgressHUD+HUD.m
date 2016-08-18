@@ -106,6 +106,32 @@
     [hud hideAnimated:YES afterDelay:DelayTime];
 }
 
+
+/** 自定义加载动画 + 文字 **/
++(void)showCustomGifHUD:(NSString *)msg imageName:(NSString *)imageName{
+    
+    [MBProgressHUD hideHUD];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.contentColor = [UIColor whiteColor];
+    hud.mode = MBProgressHUDModeCustomView;
+    
+    //设置显示的图片
+    hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
+    
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI*2.0];
+    rotationAnimation.duration = 0.6;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = 20000;//重复次数
+    [hud.customView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
+    // Looks a bit nicer if we make it square.
+    hud.square = YES;
+    hud.label.text = msg;
+}
+
+
 //隐藏HUD
 +(void)hideHUD{
     

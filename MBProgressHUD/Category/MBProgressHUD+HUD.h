@@ -31,6 +31,7 @@
 /** 自定义图片 + 文字 **/
 +(void)showCustomViewHUD:(NSString *)msg imageName:(NSString *)imageName;
 
++(void)showCustomGifHUD:(NSString *)msg imageName:(NSString *)imageName;
 //隐藏HUD
 +(void)hideHUD;
 
